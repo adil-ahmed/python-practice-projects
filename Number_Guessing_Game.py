@@ -26,16 +26,23 @@ while True:
 # Generate a random number between minimum and maximum
 original_number = random.randint(minimum, maximum)
 
+attempts = 5
+
 # Guessing game loop
-while True:
+while attempts:
     try:
-        guess_number = int(input(f"Guess the number between {minimum} and {maximum}: "))
+        guess_number = int(input(f"Guess the number between {minimum} and {maximum} and you have {attempts} attempt{'s' if attempts > 1 else ''}: ")) 
+        attempts = attempts - 1
         if guess_number > original_number:
             print("Too high!")
         elif guess_number < original_number:
             print("Too low!")
         else:
-            print("Congratulations! You guessed the number.")
+            print(f"Congratulations! You guessed the number with {attempts} attempt{'s' if attempts > 1 else ''} left")
             break
+        
     except ValueError:
         print("Please enter a valid number.")
+
+    if attempts == 0:
+        print("You are out of attempts. Thanks for playing!")
