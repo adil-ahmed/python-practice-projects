@@ -9,37 +9,37 @@ choices = tuple(associate.keys())
 
 def get_user_choice():
     while True:
-        response = input("Rock, paper, or scissors? (r/p/s): ").lower()
-        if response in choices:
-            return response
+        your_choice = input("Rock, paper, or scissors? (r/p/s): ").lower()
+        if your_choice in choices:
+            return your_choice
         else:
             print("Invalid choice!")
 
-def display_choices(response, computer_choice):
-    print(f'You choose {associate[response]}')
+def display_choices(your_choice, computer_choice):
+    print(f'You choose {associate[your_choice]}')
     print(f'Computer choose {associate[computer_choice]}')
 
 
-def decider(response, computer_choice):
-    if response == computer_choice:
+def decider(your_choice, computer_choice):
+    if your_choice == computer_choice:
         print('Tie!')
     elif (
-        (response == ROCK and computer_choice == SCISSORS) or
-        (response == SCISSORS and computer_choice == PAPER) or
-        (response == PAPER and computer_choice == ROCK)):
+        (your_choice == ROCK and computer_choice == SCISSORS) or
+        (your_choice == SCISSORS and computer_choice == PAPER) or
+        (your_choice == PAPER and computer_choice == ROCK)):
         print('You win!')
     else:
         print('You lose')
 
 def play_game():
     while True:
-        response = get_user_choice()
+        your_choice = get_user_choice()
 
         computer_choice = random.choice(choices)
 
-        display_choices(response, computer_choice)
+        display_choices(your_choice, computer_choice)
 
-        decider(response, computer_choice)
+        decider(your_choice, computer_choice)
 
         should_continue = input('Continue? (y/n): ').lower()
         if should_continue == 'n':
