@@ -6,6 +6,7 @@ Welcome to my Python practice repository! This is a collection of small, console
 
 - **Dice Rolling Game**: A simple game where the user rolls a virtual dice.
 - **Number Guessing Game**: The program generates a random number, and the user has to guess it.
+- **Rock, Paper, Scissors Game**: A classic game where the user competes against the computer.
 
 ## How to Use
 
